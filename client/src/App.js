@@ -16,17 +16,17 @@ import SingleEvent from "./pages/SingleEvent";
 import Profile from "./pages/Profile";
 
 //TODO:
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 //TODO: Move
 // export default function Header() {
-function Header() {
-  return <header>Header</header>;
-}
-function Footer() {
-  return <footer>Footer</footer>;
-}
+// function Header() {
+//   return <header>Header</header>;
+// }
+// function Footer() {
+//   return <footer>Footer</footer>;
+// }
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
