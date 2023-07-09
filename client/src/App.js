@@ -5,7 +5,8 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+//import { setContext } from "@apollo/client/link/context";
+import { setContext } from "apollo-link-context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -13,8 +14,19 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import SingleEvent from "./pages/SingleEvent";
 import Profile from "./pages/Profile";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+
+//TODO:
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
+
+//TODO: Move
+// export default function Header() {
+function Header() {
+  return <header>Header</header>;
+}
+function Footer() {
+  return <footer>Footer</footer>;
+}
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

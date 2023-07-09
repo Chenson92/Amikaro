@@ -1,5 +1,5 @@
 {
-  "name": "programming-thoughts",
+  "name": "amikaro",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -10,7 +10,6 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
