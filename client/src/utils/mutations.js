@@ -28,8 +28,9 @@ export const ADD_EVENT = gql`
   mutation addEvent($eventText: String!) {
     addEvent(eventText: $eventText) {
       _id
+      title
       eventText
-      eventAuthor
+      creator
       createdAt
       comments {
         _id
@@ -43,8 +44,9 @@ export const ADD_COMMENT = gql`
   mutation addComment($eventId: ID!, $commentText: String!) {
     addComment(eventId: $eventId, commentText: $commentText) {
       _id
+      title
       eventText
-      eventAuthor
+      creator
       createdAt
       comments {
         _id

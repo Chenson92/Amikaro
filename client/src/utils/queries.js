@@ -8,6 +8,7 @@ export const QUERY_USER = gql`
       email
       events {
         _id
+        title
         eventText
         createdAt
       }
@@ -19,8 +20,9 @@ export const QUERY_EVENTS = gql`
   query getEvents {
     events {
       _id
+      title
       eventText
-      eventAuthor
+      creator
       createdAt
     }
   }
@@ -30,8 +32,9 @@ export const QUERY_SINGLE_EVENT = gql`
   query getSingleEvent($eventId: ID!) {
     event(eventId: $eventId) {
       _id
+      title
       eventText
-      eventAuthor
+      creator
       createdAt
       comments {
         _id
