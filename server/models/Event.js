@@ -2,14 +2,16 @@ const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const eventSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+  },
   eventText: {
     type: String,
     // required: "You need to create a event!",
-    minlength: 1,
-    maxlength: 3000,
-    trim: true,
+    required: true,
   },
-  eventAuthor: {
+  creator: {
     type: String,
     required: true,
     trim: true,

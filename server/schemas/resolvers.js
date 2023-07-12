@@ -14,7 +14,7 @@ const resolvers = {
       const params = username ? { username } : {};
       return Event.find(params).sort({ createdAt: -1 });
     },
-    thought: async (parent, { eventId }) => {
+    event: async (parent, { eventId }) => {
       return Event.findOne({ _id: eventId });
     },
     me: async (parent, args, context) => {
@@ -52,7 +52,7 @@ const resolvers = {
       if (context.user) {
         const event = await Event.create({
           eventText,
-          eventAuthor: context.user.username,
+          creator: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -85,7 +85,7 @@ const resolvers = {
       if (context.user) {
         const event = await Event.findOneAndDelete({
           _id: eventId,
-          eventAuthor: context.user.username,
+          creator: context.user.username,
         });
 
         await User.findOneAndUpdate(

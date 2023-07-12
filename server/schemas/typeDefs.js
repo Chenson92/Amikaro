@@ -11,8 +11,9 @@ const typeDefs = gql`
 
   type Event {
     _id: ID
+    title: String
     eventText: String
-    eventAuthor: String
+    creator: String
     createdAt: String
     comments: [Comment]!
   }
