@@ -29,30 +29,10 @@ export const ADD_EVENT = gql`
     addEvent(eventText: $eventText) {
       _id
       title
+      image
       eventText
       creator
       createdAt
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
-
-export const ADD_COMMENT = gql`
-  mutation addComment($eventId: ID!, $commentText: String!) {
-    addComment(eventId: $eventId, commentText: $commentText) {
-      _id
-      title
-      eventText
-      creator
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
     }
   }
 `;

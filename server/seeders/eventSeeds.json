@@ -1,7 +1,22 @@
 [
   {
-    "title": "Pizza night ",
-    "eventText": "We will host our first Pizza night this Saturday! Everyone is welcomed. We will introduce Esperanto while enjoying pizza and drinks!",
-    "creator": "Brian"
+    "title": "Pizza Night ",
+    "image": "pizzanight.jpg",
+    "eventText": "We will host our first Pizza night this Saturday! Everyone is welcomed. We will introduce Esperanto while enjoying pizza and drinks!"
+  },
+  {
+    "title": "Esperanto Camping",
+    "image": "camp.jpg",
+    "eventText": "Meet up other esperanto speakers & Join us for this camping event in Woy Woy on 8th August!"
+  },
+  {
+    "title": "Esperanto Book-club",
+    "image": "read.jpg",
+    "eventText": "Learn and improve your language skill, by reading and discussing books in Esperanto.★ Lernu kaj plibonigu vian lingvo-lertecon per legado kaj diskutado de Esperanto-libroj."
+  },
+  {
+    "title": "Esperanto Course",
+    "image": "esperanto.jpg",
+    "eventText": "This course is for beginners and all level! If you are interested in Esperanto, come and join our class!"
   }
 ]

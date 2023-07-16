@@ -5,20 +5,16 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-//import { setContext } from "@apollo/client/link/context";
 import { setContext } from "apollo-link-context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Events from "./pages/Events";
-import SingleEvent from "./pages/SingleEvent";
-import Profile from "./pages/Profile";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-import "./App.css";
+import Nav from "./components/Nav";
+import Location from "./pages/Location";
+//import Header from "./components/Header";
+//import Footer from "./components/Footer";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -48,19 +44,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="App-header">
-          <Header />
-          <div className="App-link">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/me" element={<Profile />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/events/:eventId" element={<SingleEvent />} />
-            </Routes>
-          </div>
-          <Footer />
+        <div>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/locations/:locationId" element={<Location />} />
+          </Routes>
         </div>
       </Router>
     </ApolloProvider>

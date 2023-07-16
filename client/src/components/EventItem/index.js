@@ -1,25 +1,14 @@
 import React from "react";
-
-//import './EventItem.css';
-
+import { Link } from "react-router-dom";
 const EventItem = (props) => (
-  <li key={props.eventId} className="events__list-item">
-    <div>
-      <h1>{props.title}</h1>
-      <h2>{new Date(props.createdAt).toLocaleDateString()}</h2>
-    </div>
-    <div>
-      {props.userId === props.creatorId ? (
-        <p>Your the owner of this event.</p>
-      ) : (
-        <button
-          className="btn"
-          onClick={props.onDetail.bind(this, props.eventId)}>
-          View Details
-        </button>
-      )}
-    </div>
-  </li>
+  <div className="card px-1 py-1">
+    <Link to={`/locations/${props._id}`}>
+      <img alt={props.title} src={`/images/${props.image}`} />
+      <p>{props.title}</p>
+      <p>{props.eventText}</p>
+    </Link>
+    <div></div>
+  </div>
 );
 
 export default EventItem;

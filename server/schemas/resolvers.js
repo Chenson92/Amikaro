@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Event } = require("../models");
+const { User, Event, Booking } = require("../models");
 const { signToken } = require("../utils/auth");
+//const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -9,6 +10,9 @@ const resolvers = {
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate("events");
+    },
+    location_events: async (parent, { locationId }) => {
+      return Booking.find({ _id: locationId }).sort({ createdAt: -1 });
     },
     events: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -52,7 +56,6 @@ const resolvers = {
       if (context.user) {
         const event = await Event.create({
           eventText,
-          creator: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -64,28 +67,11 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    addComment: async (parent, { eventId, commentText }, context) => {
-      if (context.user) {
-        return Event.findOneAndUpdate(
-          { _id: eventId },
-          {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.username },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw new AuthenticationError("You need to be logged in!");
-    },
+
     removeEvent: async (parent, { eventId }, context) => {
       if (context.user) {
         const event = await Event.findOneAndDelete({
           _id: eventId,
-          creator: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -94,23 +80,6 @@ const resolvers = {
         );
 
         return event;
-      }
-      throw new AuthenticationError("You need to be logged in!");
-    },
-    removeComment: async (parent, { eventId, commentId }, context) => {
-      if (context.user) {
-        return Event.findOneAndUpdate(
-          { _id: eventId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
       }
       throw new AuthenticationError("You need to be logged in!");
     },

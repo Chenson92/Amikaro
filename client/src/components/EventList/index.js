@@ -1,24 +1,50 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import EventItem from "../EventItem";
-//import "./EventList.css";
 
 const EventList = (props) => {
-  const events = props.events.map((event) => {
-    return (
-      <EventItem
-        key={event._id}
-        eventId={event._id}
-        title={event.title}
-        createdAt={event.createdAt}
-        userId={props.authUserId}
-        creatorId={event.creator._id}
-        onDetail={props.onViewDetail}
-      />
-    );
-  });
+  useEffect(() => {
+    console.log("**** From EventList ****");
+    console.log(props);
+  }, []);
 
-  return <ul className="event__list">{events}</ul>;
+  // JSX {} must return array of, string, HTML/components, or empty
+  return (
+    <div>
+      <h2>Our Events:</h2>
+      {props.events.map((event) => {
+        return (
+          <div className="my-2">
+            <EventItem
+              key={event._id}
+              _id={event._id}
+              image={event.image}
+              title={event.title}
+              eventText={event.eventText}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  // const events = props.events.map((event) => {
+  //   return (
+  //     <div className="my-2">
+  //       <h2>Our Events:</h2>
+
+  //       <EventItem
+  //         key={event._id}
+  //         _id={event._id}
+  //         image={event.image}
+  //         title={event.title}
+  //         eventText={event.eventText}
+  //       />
+  //     </div>
+  //   );
+  // });
+
+  // return <> {events} </>;
+  // //return <div>{events}</div>;
 };
 
 export default EventList;

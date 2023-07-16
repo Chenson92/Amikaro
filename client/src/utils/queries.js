@@ -9,6 +9,7 @@ export const QUERY_USER = gql`
       events {
         _id
         title
+        image
         eventText
         createdAt
       }
@@ -16,13 +17,36 @@ export const QUERY_USER = gql`
   }
 `;
 
+// export const QUERY_EVENTS = gql`
+//   query getEvents {
+//     events {
+//       _id
+//       title
+//       image
+//       eventText
+//       creator
+//       createdAt
+//     }
+//   }
+// `;
+export const QUERY_EVENTS_FOR_LOCATION = gql`
+  query getEvents($locationId: String!) {
+    location_events(locationId: $locationId) {
+      _id
+      title
+      image
+      eventText
+      createdAt
+    }
+  }
+`;
 export const QUERY_EVENTS = gql`
   query getEvents {
     events {
       _id
       title
+      image
       eventText
-      creator
       createdAt
     }
   }
@@ -33,15 +57,10 @@ export const QUERY_SINGLE_EVENT = gql`
     event(eventId: $eventId) {
       _id
       title
+      image
       eventText
       creator
       createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
     }
   }
 `;
@@ -54,8 +73,10 @@ export const QUERY_ME = gql`
       email
       events {
         _id
+        title
+        image
         eventText
-        eventAuthor
+        creator
         createdAt
       }
     }
