@@ -52,9 +52,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addEvent: async (parent, { eventText }, context) => {
+    addEvent: async (parent, { title, image, eventText }, context) => {
       if (context.user) {
         const event = await Event.create({
+          title,
+          image,
           eventText,
         });
 

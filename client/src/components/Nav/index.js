@@ -8,7 +8,7 @@ function Nav() {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/Booking">Your Next Esperanto Events</Link>
+            <Link to="/Booking">Booking</Link>
           </li>
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -39,10 +39,17 @@ function Nav() {
           <span role="img" aria-label="green heart">
             💚
           </span>
-          Esperanto
+          Amikaro
         </Link>
       </h1>
-
+      <ul className="flex-row">
+        <li className="mx-1">
+          <Link to="/introduction">Introduction</Link>
+        </li>
+        <li className="mx-1">
+          <Link to="/addevent">Create Event</Link>
+        </li>
+      </ul>
       <nav>{showNavigation()}</nav>
     </header>
   );

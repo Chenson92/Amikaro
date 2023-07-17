@@ -13,8 +13,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Location from "./pages/Location";
-//import Header from "./components/Header";
-//import Footer from "./components/Footer";
+import Introduction from "./pages/Introduction";
+import AddEvent from "./pages/AddEvent";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,6 +51,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/locations/:locationId" element={<Location />} />
+            <Route path="/introduction" element={<Introduction />} />
+            <Route path="/addevent" element={<AddEvent />} />
           </Routes>
         </div>
       </Router>

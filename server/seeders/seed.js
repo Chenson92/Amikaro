@@ -14,13 +14,13 @@ db.once("open", async () => {
       title: "Pizza Night ",
       image: "pizzanight.jpg",
       eventText:
-        "We will host our first Pizza night this Saturday! Everyone is welcomed. We will introduce Esperanto while enjoying pizza and drinks!",
+        "We host our Pizza night every Saturday at 6pm! Everyone is welcomed. We will introduce Esperanto while enjoying pizza and drinks!",
     },
     {
       title: "Esperanto Camping",
       image: "camp.jpg",
       eventText:
-        "Meet up other esperanto speakers & Join us for this camping event in Woy Woy on 8th August!",
+        "Meet up other esperanto speakers & Join this camping event in Woy Woy!",
     },
     {
       title: "Esperanto Book-club",

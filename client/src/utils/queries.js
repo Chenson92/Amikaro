@@ -17,18 +17,6 @@ export const QUERY_USER = gql`
   }
 `;
 
-// export const QUERY_EVENTS = gql`
-//   query getEvents {
-//     events {
-//       _id
-//       title
-//       image
-//       eventText
-//       creator
-//       createdAt
-//     }
-//   }
-// `;
 export const QUERY_EVENTS_FOR_LOCATION = gql`
   query getEvents($locationId: String!) {
     location_events(locationId: $locationId) {
@@ -59,7 +47,6 @@ export const QUERY_SINGLE_EVENT = gql`
       title
       image
       eventText
-      creator
       createdAt
     }
   }

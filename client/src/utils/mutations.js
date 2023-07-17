@@ -25,14 +25,13 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_EVENT = gql`
-  mutation addEvent($eventText: String!) {
-    addEvent(eventText: $eventText) {
-      _id
-      title
+  mutation Mutation($title: String!, $image: String!, $eventText: String!) {
+    addEvent(title: $title, image: $image, eventText: $eventText) {
       image
+      title
       eventText
-      creator
       createdAt
+      _id
     }
   }
 `;
