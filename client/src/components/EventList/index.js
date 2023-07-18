@@ -9,7 +9,7 @@ const EventList = (props) => {
     console.log("**** From EventList ****");
     console.log(props);
     console.log("AuthService.getProfile().data._id ");
-    console.log(AuthService.getProfile().data._id);
+    // console.log(AuthService.getProfile().data._id);
   });
 
   const [deleteEvent] = useMutation(DELETE_EVENT);

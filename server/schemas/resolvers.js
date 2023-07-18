@@ -58,6 +58,7 @@ const resolvers = {
           title,
           image,
           eventText,
+          creator: context.user._id,
         });
 
         await User.findOneAndUpdate(
@@ -72,14 +73,16 @@ const resolvers = {
 
     removeEvent: async (parent, { eventId }, context) => {
       if (context.user) {
+        console.log(context.user);
         const event = await Event.findOneAndDelete({
           _id: eventId,
+          creator: context.user._id,
         });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { events: event._id } }
-        );
+        // await User.findOneAndUpdate(
+        //   { _id: context.user._id },
+        //   { $pull: { events: event._id } }
+        // );
 
         return event;
       }

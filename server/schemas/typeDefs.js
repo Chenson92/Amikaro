@@ -15,6 +15,7 @@ const typeDefs = gql`
     eventText: String
     image: String
     createdAt: String
+    creator: String
   }
   type Booking {
     _id: ID!
@@ -41,7 +42,12 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEvent(title: String!, image: String!, eventText: String!): Event
+    addEvent(
+      title: String!
+      image: String!
+      eventText: String!
+      creator: String!
+    ): Event
     removeEvent(eventId: ID!): Event
   }
 `;
