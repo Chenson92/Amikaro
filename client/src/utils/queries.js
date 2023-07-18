@@ -12,6 +12,7 @@ export const QUERY_USER = gql`
         image
         eventText
         createdAt
+        creator
       }
     }
   }
@@ -24,6 +25,7 @@ export const QUERY_EVENTS_FOR_LOCATION = gql`
       title
       image
       eventText
+      creator
       createdAt
     }
   }
@@ -34,6 +36,7 @@ export const QUERY_EVENTS = gql`
       _id
       title
       image
+      creator
       eventText
       createdAt
     }
@@ -47,6 +50,7 @@ export const QUERY_SINGLE_EVENT = gql`
       title
       image
       eventText
+      creator
       createdAt
     }
   }

@@ -14,6 +14,7 @@ const EventForm = () => {
   const [title, setEventTitle] = useState("");
   const [image, setEventImage] = useState("");
   const [eventText, setEventText] = useState("");
+  //const [creator, setEventCreator] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -48,11 +49,13 @@ const EventForm = () => {
           title,
           image,
           eventText,
+          // creator,
         },
       });
       setEventTitle("");
       setEventImage("");
       setEventText("");
+      // setEventCreator("");
     } catch (err) {
       console.error(err);
     }
@@ -120,6 +123,7 @@ const EventForm = () => {
                 className="form-input"
                 onChange={handleChange}></textarea>
             </div>
+            <div></div>
             <br></br>
             <div>
               <button className="btn btn-primary btn-block py-3" type="submit">

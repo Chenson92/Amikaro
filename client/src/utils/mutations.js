@@ -30,7 +30,16 @@ export const ADD_EVENT = gql`
       image
       title
       eventText
+      creator
       createdAt
+      _id
+    }
+  }
+`;
+
+export const DELETE_EVENT = gql`
+  mutation removeEvent($eventId: ID!) {
+    removeEvent(eventId: $eventId) {
       _id
     }
   }

@@ -8,6 +8,7 @@ const Home = () => {
   const { loading, error, data } = useQuery(QUERY_EVENTS); // fetch to GET /graphql
 
   useEffect(() => {
+    console.log("data");
     console.log(data);
   }, [loading]);
 

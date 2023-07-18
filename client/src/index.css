@@ -111,7 +111,17 @@ button[disabled] {
 img {
   max-width: 100%;
 }
-
+.flag {
+  max-width: 50%;
+}
+.intro-container {
+  display: flex;
+  align-items: center;
+}
+.homo {
+  max-width: 20%;
+  margin-right: 10px;
+}
 span[role="img"] {
   cursor: default;
 }

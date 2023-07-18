@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import EventForm from "../components/EventForm/EventForm";
-//import EventList from "../components/EventList";
+
 import { QUERY_EVENTS } from "../utils/queries";
 import { ADD_EVENT } from "../utils/mutations";
 
