@@ -10,6 +10,8 @@ const EventList = (props) => {
     console.log(props);
     console.log("AuthService.getProfile().data._id ");
     // console.log(AuthService.getProfile().data._id);
+    console.log("login", AuthService.loggedIn());
+    console.log("data id", AuthService.getProfile().data._id);
   });
 
   const [deleteEvent] = useMutation(DELETE_EVENT);
@@ -28,8 +30,8 @@ const EventList = (props) => {
     <div className="event-container">
       <h2>Our Events:</h2>
       {props.events.map((event) => {
-        console.log("event.userId");
-        console.log(event.userId);
+        // console.log("event.userId");
+        // console.log(event);
 
         return (
           <div className="my-2" key={event._id}>
@@ -41,7 +43,7 @@ const EventList = (props) => {
               eventText={event.eventText}
             />
             {AuthService.loggedIn() &&
-              AuthService.getProfile().data._id === event.userId && (
+              AuthService.getProfile().data._id === event.creator && (
                 <button
                   className="btn btn-primary btn-block py-3"
                   onClick={() => handleDeleteEvent(event._id)}>

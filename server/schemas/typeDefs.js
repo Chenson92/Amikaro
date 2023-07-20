@@ -42,12 +42,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEvent(
-      title: String!
-      image: String!
-      eventText: String!
-      creator: String!
-    ): Event
+    addEvent(title: String!, image: String!, eventText: String!): Event
     removeEvent(eventId: ID!): Event
   }
 `;
