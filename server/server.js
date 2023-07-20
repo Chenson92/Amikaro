@@ -2,6 +2,8 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
+require("dotenv").config();
+const Stripe = require("stripe")(process.env.SECRET_KEY);
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
@@ -42,6 +44,21 @@ const startApolloServer = async (typeDefs, resolvers) => {
     });
   });
 };
-
+app.post("/payment", async (req, res) => {
+  let status, error;
+  const { token, amount } = req.body;
+  try {
+    await Stripe.charges.create({
+      source: token.id,
+      amount,
+      currency: "usd",
+    });
+    status = "success";
+  } catch (error) {
+    console.log(error);
+    status = "Failure";
+  }
+  res.json({ error, status });
+});
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);

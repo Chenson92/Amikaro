@@ -49,6 +49,9 @@ function Nav() {
         <li className="mx-1">
           <Link to="/addevent">Create Event</Link>
         </li>
+        <li className="mx-1">
+          <Link to="/donation">Give</Link>
+        </li>
       </ul>
       <nav>{showNavigation()}</nav>
     </header>

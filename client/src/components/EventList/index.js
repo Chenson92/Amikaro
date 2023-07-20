@@ -14,12 +14,15 @@ const EventList = (props) => {
     console.log("data id", AuthService.getProfile().data._id);
   });
 
-  const [deleteEvent] = useMutation(DELETE_EVENT);
+  const [deleteEvent, { error }] = useMutation(DELETE_EVENT);
 
   const handleDeleteEvent = async (eventId) => {
     try {
-      await deleteEvent(eventId);
-      props.fetchEvent();
+      console.log("EVENTTTTT", eventId);
+      await deleteEvent({
+        variables: { eventId },
+      });
+      // props.fetchEvent();
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +34,7 @@ const EventList = (props) => {
       <h2>Our Events:</h2>
       {props.events.map((event) => {
         // console.log("event.userId");
-        // console.log(event);
+        console.log(event);
 
         return (
           <div className="my-2" key={event._id}>
