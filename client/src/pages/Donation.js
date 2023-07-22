@@ -55,7 +55,7 @@ function Donation() {
       <p>${donate.price}</p>
       <StripeCheckout
         stripeKey={publishableKey}
-        label="Pay Now"
+        label="Donate"
         name="Pay With Credit Card"
         billingAddress
         shippingAddress
