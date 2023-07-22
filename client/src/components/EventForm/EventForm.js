@@ -71,7 +71,7 @@ const EventForm = () => {
   };
 
   return (
-    <div>
+    <div className="event-form-container">
       <h2>What is your event?</h2>
 
       {Auth.loggedIn() ? (
@@ -102,9 +102,9 @@ const EventForm = () => {
                 <label>Image</label>
               </div>
               <input
-                type="text"
+                type="url"
                 name="image"
-                placeholder="Choose image"
+                placeholder="Image url"
                 value={image}
                 className="form-input"
                 onChange={(e) => setEventImage(e.target.value)}
@@ -122,14 +122,17 @@ const EventForm = () => {
                 value={eventText}
                 className="form-input"
                 onChange={handleChange}></textarea>
+              <div>
+                <button
+                  className="btn btn-primary btn-block py-3"
+                  type="submit">
+                  Create Event
+                </button>
+              </div>
             </div>
-            <div></div>
-            <br></br>
-            <div>
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Create Event
-              </button>
-            </div>
+
+            {/* <br></br> */}
+
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}

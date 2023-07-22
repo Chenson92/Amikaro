@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+//import amikaro from "../assest/amikaro-login.png";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
@@ -39,45 +39,56 @@ const Signup = () => {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+    <div className="user-enter">
+      <div className="container signup my-1">
+        <Link to="/login">← Go to Login</Link>
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">Your Username:</label>
-          <input
-            placeholder="Your username"
-            name="username"
-            type="text"
-            value={formState.name}
-            onChange={handleChange}
-          />{" "}
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="Your email"
-            name="email"
-            type="email"
-            value={formState.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            value={formState.password}
-            onChange={handleChange}
-          />{" "}
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+        <h2>Signup</h2>
+        <form onSubmit={handleFormSubmit}>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="firstName">Your Username:</label>
+            <input
+              placeholder="Your username"
+              name="username"
+              type="text"
+              value={formState.name}
+              onChange={handleChange}
+            />{" "}
+          </div>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="email">Email:</label>
+            <input
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="pwd">Password:</label>
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />{" "}
+          </div>
+          <div className="flex-row flex-end">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div className="logo">
+        {" "}
+        {/* <img
+          className="amoLogo"
+          src={amikaro}
+          alt="Amikaro Logo"
+          // Adjust the height and any other styles as needed
+        /> */}
+      </div>
     </div>
   );
 };

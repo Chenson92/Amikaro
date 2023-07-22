@@ -41,7 +41,7 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container my-1">
+    <div className="container login my-1">
       <Link to="/signup">← Go to Signup</Link>
 
       <h2>Login</h2>
@@ -71,7 +71,7 @@ const Login = (props) => {
             <p className="error-text">The provided credentials are incorrect</p>
           </div>
         ) : null}
-        <div className="flex-row flex-end">
+        <div className="flex-row ">
           <button type="submit">Submit</button>
         </div>
       </form>

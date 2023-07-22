@@ -1,6 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import amikaroLogo from "../../assest/amikaro.png";
 
 function Nav() {
   function showNavigation() {
@@ -22,7 +23,7 @@ function Nav() {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/signup">Signup</Link>
+            <Link to="/signup">Sign Up</Link>
           </li>
           <li className="mx-1">
             <Link to="/login">Login</Link>
@@ -36,10 +37,15 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="green heart">
-            💚
-          </span>
-          Amikaro
+          {/* <span role="img" aria-label="green heart">
+          💚
+        </span>
+        Amikaro */}
+          <img
+            src={amikaroLogo}
+            alt="Amikaro Logo"
+            style={{ height: "10vh", marginLeft: "5vh", marginRight: "5vh" }} // Adjust the height and any other styles as needed
+          />
         </Link>
       </h1>
       <ul className="flex-row">

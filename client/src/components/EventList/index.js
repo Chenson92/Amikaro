@@ -41,7 +41,7 @@ const EventList = (props) => {
         console.log(event);
 
         return (
-          <div className="my-2" key={event._id}>
+          <div className="event-list" key={event._id}>
             <EventItem
               key={event._id}
               _id={event._id}
@@ -49,10 +49,11 @@ const EventList = (props) => {
               title={event.title}
               eventText={event.eventText}
             />
+
             {AuthService.loggedIn() &&
               AuthService.getProfile().data._id === event.creator && (
                 <button
-                  className="btn btn-primary btn-block py-3"
+                  className="btn btn-primary btn-block py-3 delete-button"
                   onClick={() => handleDeleteEvent(event._id)}>
                   Delete
                 </button>
