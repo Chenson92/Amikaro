@@ -8,10 +8,14 @@ const EventList = (props) => {
   useEffect(() => {
     console.log("**** From EventList ****");
     console.log(props);
-    console.log("AuthService.getProfile().data._id ");
-    // console.log(AuthService.getProfile().data._id);
     console.log("login", AuthService.loggedIn());
-    console.log("data id", AuthService.getProfile().data._id);
+
+    const dataId = AuthService.getProfile()?.data._id;
+    if (dataId !== null) {
+      console.log("data id: ", dataId);
+    } else {
+      console.log("no data id for logged out user ");
+    }
   });
 
   const [deleteEvent, { error }] = useMutation(DELETE_EVENT);
