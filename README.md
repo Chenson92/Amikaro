@@ -63,7 +63,9 @@ Esperanto is an international auxiliary language designed to be easy to learn, p
 
 ## Screenshot
 
-![text](./Assets/texteditor.png)
+![Homepage-large](./client/src/assest/app-large.png)
+![Homepage-small](./client/src/assest/app-small.png)
+![payment](./client/src/assest/payment.png)
 
 ## Links
 

@@ -1,9 +1,9 @@
 :root {
   --primary: #7a9d54;
   --secondary: #f3a847;
-  --tertiary: #b12704;
+  --tertiary: #17594a;
   --light: #fafafa;
-  --dark: #7a9d54;
+  --dark: #17594a;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -74,7 +74,9 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
-
+ul {
+  list-style-type: none;
+}
 a:hover {
   text-decoration: underline;
 }
@@ -272,6 +274,30 @@ input:focus {
   width: 20em;
   height: 10em;
 }
+.donate-container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  border: 2em solid #f2ee9d;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 10vh;
+}
+.donate-container h2 {
+  font-size: 8vh;
+  font-weight: bold;
+}
+.donate-container p {
+  font-size: 3vh;
+}
+.payment {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
@@ -289,6 +315,7 @@ input:focus {
     flex-direction: column;
   }
 }
+
 @media screen and (min-width: 768px) {
   .card {
     width: 75%;

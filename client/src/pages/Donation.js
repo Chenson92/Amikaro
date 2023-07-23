@@ -49,20 +49,26 @@ function Donation() {
   };
 
   return (
-    <div className="container">
-      <h2>Help Us Grow</h2>
-      <p>{donate.name}</p>
-      <p>${donate.price}</p>
-      <StripeCheckout
-        stripeKey={publishableKey}
-        label="Donate"
-        name="Pay With Credit Card"
-        billingAddress
-        shippingAddress
-        amount={priceForStripe}
-        description={`Your total is $${donate.price}`}
-        token={payNow}
-      />
+    <div className="donate-container">
+      <div>
+        <h2>Help Us Grow</h2>
+      </div>
+
+      <div className="payment">
+        {" "}
+        <p>{donate.name}</p>
+        <p>${donate.price}</p>
+        <StripeCheckout
+          stripeKey={publishableKey}
+          label="Donate"
+          name="Pay With Credit Card"
+          billingAddress
+          shippingAddress
+          amount={priceForStripe}
+          description={`Your total is $${donate.price}`}
+          token={payNow}
+        />
+      </div>
     </div>
   );
 }
