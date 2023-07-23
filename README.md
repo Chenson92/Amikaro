@@ -70,7 +70,7 @@ Esperanto is an international auxiliary language designed to be easy to learn, p
 ## Links
 
 - GitHub: https://github.com/Chenson92/Amikaro
-- Heroku:
+- Heroku: https://amikaro-0944e559ba29.herokuapp.com/
 
 ## License
 
