@@ -15,7 +15,7 @@
 
 ## Description
 
-Amikaro is a web application that provides a platform for Esperanto speakers and those interested in or curious about Esperanto to connect, meet up, and practice the language together. The app allows users to create accounts, host their own Esperanto events (either locally or online meetups), and delete their accounts if needed. Visitors can also contribute by making donations to support the development and maintenance of the app.
+Amikaro is a web application that provides a platform for Esperanto speakers and those interested in or curious about Esperanto to connect, meet up, and practice the language together. The app allows users to create accounts, host their own Esperanto events (either locally or online meetups), and delete their events if needed. Visitors can also contribute by making donations to support the development and maintenance of the app.
 
 Esperanto is an international auxiliary language designed to be easy to learn, promoting communication and understanding among people from different linguistic backgrounds. Amikaro seeks to foster a welcoming and inclusive environment for all Esperanto enthusiasts, enabling them to find like-minded individuals to practice and socialize with.
 
@@ -51,8 +51,8 @@ Esperanto is an international auxiliary language designed to be easy to learn, p
   - Provide the required details, including a valid email address and a secure password.
   - Once the account is created, log in with your credentials to access the full features of the app.
 - Hosting Esperanto Events
-  - After logging in, click on the "Host Event" button.
-  - Fill in the event details, such as event name, date, location (if it's a local meetup), or platform link (for online meetups).
+  - After logging in, click on the "Create Event" button.
+  - Fill in the event details, such as event title, information (if it's a local meetup), or platform link (for online meetups).
   - Submit the event to make it visible to other users.
 - Donations
   <br>
