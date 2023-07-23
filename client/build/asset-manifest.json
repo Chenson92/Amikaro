@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.561cc752.css",
-    "main.js": "/static/js/main.7827c624.js",
+    "main.css": "/static/css/main.570b191f.css",
+    "main.js": "/static/js/main.62067623.js",
+    "static/media/Zamenhof.jpg": "/static/media/Zamenhof.0d63224d9373a2003976.jpg",
+    "static/media/amikaro.png": "/static/media/amikaro.212b1667498f79a21325.png",
     "index.html": "/index.html",
-    "main.561cc752.css.map": "/static/css/main.561cc752.css.map",
-    "main.7827c624.js.map": "/static/js/main.7827c624.js.map"
+    "main.570b191f.css.map": "/static/css/main.570b191f.css.map",
+    "main.62067623.js.map": "/static/js/main.62067623.js.map"
   },
   "entrypoints": [
-    "static/css/main.561cc752.css",
-    "static/js/main.7827c624.js"
+    "static/css/main.570b191f.css",
+    "static/js/main.62067623.js"
   ]
 }

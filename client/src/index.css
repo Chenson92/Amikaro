@@ -246,6 +246,15 @@ input:focus {
   border-style: solid;
   border-width: 3px;
 }
+.event-container {
+  display: flex;
+  align-items: center;
+}
+.image-container img {
+  display: block;
+  min-width: 250px;
+  max-width: 250px;
+}
 
 .error-text {
   color: var(--error);
@@ -270,9 +279,22 @@ input:focus {
   form {
     width: 100%;
   }
+  .image-container img {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+  .event-container {
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 768px) {
   .card {
     width: 75%;
   }
+}
+.delete-button {
+  height: 100%;
+  align-self: flex-end;
 }

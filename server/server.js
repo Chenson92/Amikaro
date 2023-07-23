@@ -4,6 +4,18 @@ const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 require("dotenv").config();
 const Stripe = require("stripe")(process.env.SECRET_KEY);
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "../client/build/images"));
+  },
+  filename: (req, file, cb) => {
+    // cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)); // Custom filename of input field name and timestamp
+    cb(null, file.originalname); // originalname has filename with extension
+  },
+});
+const upload = multer({ storage: storage });
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
@@ -20,7 +32,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Serve up static assets
-app.use("/images", express.static(path.join(__dirname, "../client/images")));
+app.use(express.static(path.join(__dirname, "../client/build")));
+//app.use("/images", express.static(path.join(__dirname, "../client/images")));
+
+app.post("/upload", upload.single("file"), (req, res) => {
+  if (req.file === null) res.json({ status: "Error", error: "Didnt upload" });
+  res.json({ status: "Successfully uploaded" });
+});
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));

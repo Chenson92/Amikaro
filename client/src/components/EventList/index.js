@@ -30,11 +30,12 @@ const EventList = (props) => {
     } catch (error) {
       console.log(error);
     }
+    window.location.href = "/";
   };
 
   // JSX {} must return array of, string, HTML/components, or empty
   return (
-    <div className="event-container">
+    <div className="events-container">
       <h2>Our Events:</h2>
       {props.events.map((event) => {
         // console.log("event.userId");

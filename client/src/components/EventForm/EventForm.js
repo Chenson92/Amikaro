@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import {Redirect} from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_EVENT } from "../../utils/mutations";
@@ -47,7 +48,7 @@ const EventForm = () => {
       const { data } = await addEvent({
         variables: {
           title,
-          image,
+          image: window.filePath,
           eventText,
           // creator,
         },
@@ -59,6 +60,7 @@ const EventForm = () => {
     } catch (err) {
       console.error(err);
     }
+    window.location.href = "/";
   };
 
   const handleChange = (event) => {
@@ -68,6 +70,34 @@ const EventForm = () => {
       setEventText(value);
       setCharacterCount(value.length);
     }
+  };
+
+  const handleFileUpload = async (event) => {
+    let formData = new FormData();
+    formData.append("file", event.target.files[0]);
+    //setEventImage("images/" + event.target.files[0].name);
+    window.filePath = event.target.files[0].name;
+
+    try {
+      const response = await fetch("/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log("Success");
+        // console.log("Upload successful");
+        // var result = await response.json();
+        // console.log("Server response: ", result); // Log the entire result object
+        // let fileUrl = "http://localhost:3001" + result.filePath;
+        // console.log("File URL: ", fileUrl);
+      } else {
+        console.error("Upload unsuccessful");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    // now state image is pointing to user's file
   };
 
   return (
@@ -102,12 +132,14 @@ const EventForm = () => {
                 <label>Image</label>
               </div>
               <input
-                type="url"
+                type="file"
                 name="image"
                 placeholder="Image url"
                 value={image}
                 className="form-input"
-                onChange={(e) => setEventImage(e.target.value)}
+                onChange={(e) => {
+                  handleFileUpload(e);
+                }}
               />{" "}
               <br></br>
               <br></br>
